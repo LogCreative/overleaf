@@ -21,6 +21,8 @@ COPY services/clsi/package.json /overleaf/services/clsi/
 COPY libraries/ /overleaf/libraries/
 COPY patches/ /overleaf/patches/
 
+RUN npm config set registry https://mirrors.cloud.tencent.com/npm/
+
 RUN cd /overleaf && npm ci --quiet
 
 COPY services/clsi/ /overleaf/services/clsi/
